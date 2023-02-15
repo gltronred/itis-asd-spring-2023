@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-#
 # 5 -> 4 -> 3 -> 2 -> None
 # ^              ^
 # |              |
@@ -17,21 +16,29 @@ class List:
     def __init__(self):
         self.head = None
         self.last = None
+
     def prepend(self, x: int):
         self.head = Elem(x, self.head)
+        # после добавления в пустой список
+        # last должен начать указывать на
+        # единственный элемент
+        if self.last is None:
+            self.last = self.head
+
     def append(self, x: int):
         if self.head is None:
             self.head = Elem(x, None)
+            self.last = self.head
         else:
-            p = self.head
-            while p.next is not None:
-                p = p.next
-            p.next = Elem(x, None)
+            self.last.next = Elem(x, None)
+            self.last = self.last.next
+
     def print_list(self):
         p = self.head
         while p is not None:
             print(p.val)
             p = p.next
+
     def length(self) -> int:
         n = 0
         p = self.head
@@ -51,6 +58,11 @@ def only_even(orig: List) -> List:
         p = p.next
     return evens
 
+# Удаляет элементы, которые делятся на 3
+# Поменять исходный список!
+def delete_mod3(orig: List):
+    pass
+
 if __name__ == '__main__':
     head = List()
     head.prepend(3)
@@ -69,3 +81,7 @@ if __name__ == '__main__':
     head.print_list()           # 5,6,4,3
     print('Evens')
     evens.print_list()          # 6,4
+
+    print('Delete mod3')
+    delete_mod3(head)
+    head.print_list()           # 5,4
