@@ -22,20 +22,9 @@ class List:
             print(p.val)
             p = p.next
 
-def print_list(head: Elem):
-    if head is None:
-        print()
-    else:
-        print(head.val, " ")
-        print_list(head.next)
-
-# Более функциональный стиль
-
-def empty_list() -> Elem:
-    return None
-
-def prepend(head: Elem, x: int) -> Elem:
-    return Elem(x, head)
+    def length(self) -> int:
+        # Write a function to compute length of the list
+        pass
 
 if __name__ == '__main__':
     head = List()
@@ -43,5 +32,3 @@ if __name__ == '__main__':
     head.prepend(4)
     head.prepend(5)
     head.print_list()
-
-    print_list(Elem(5,Elem(4,Elem(3,None))))
