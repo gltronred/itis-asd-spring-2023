@@ -5,7 +5,7 @@
 #
 
 class Elem:
-    def __init__(self, x, p):
+    def __init__(self, x: int, p):
         self.val = x
         self.next = p
 
