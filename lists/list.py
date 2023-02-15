@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
 #
-# 5 -> 4 -> 3 -> None
-#
+# 5 -> 4 -> 3 -> 2 -> None
+# ^              ^
+# |              |
+# head          last
 
 class Elem:
     def __init__(self, x: int, p):
@@ -14,6 +16,7 @@ class Elem:
 class List:
     def __init__(self):
         self.head = None
+        self.last = None
     def prepend(self, x: int):
         self.head = Elem(x, self.head)
     def append(self, x: int):
