@@ -16,10 +16,11 @@ class List:
         self.head = None
     def prepend(self, x: int):
         self.head = Elem(x, self.head)
-
-    def print_list():
-        # Write your code here!
-        pass
+    def print_list(self):
+        p = self.head
+        while p is not None:
+            print(p.val)
+            p = p.next
 
 def print_list(head: Elem):
     if head is None:
@@ -41,5 +42,6 @@ if __name__ == '__main__':
     head.prepend(3)
     head.prepend(4)
     head.prepend(5)
+    head.print_list()
 
     print_list(Elem(5,Elem(4,Elem(3,None))))
