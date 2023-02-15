@@ -61,7 +61,22 @@ def only_even(orig: List) -> List:
 # Удаляет элементы, которые делятся на 3
 # Поменять исходный список!
 def delete_mod3(orig: List):
-    pass
+    p = orig.head
+    while p is not None and p.val % 3 == 0:
+        p = p.next
+    orig.head = p
+    if p is None:
+        orig.last = p
+    else:
+        q = p.next
+        while q is not None:
+            if q.val % 3 == 0:
+                p.next = q.next
+                q = p.next
+            else:
+                p = p.next
+                q = q.next
+        orig.last = p
 
 if __name__ == '__main__':
     head = List()
@@ -82,6 +97,11 @@ if __name__ == '__main__':
     print('Evens')
     evens.print_list()          # 6,4
 
+    head.prepend(30)
+    head.prepend(33)
+    head.append(9)
     print('Delete mod3')
+    head.print_list()
+    print('After deletion')
     delete_mod3(head)
     head.print_list()           # 5,4
