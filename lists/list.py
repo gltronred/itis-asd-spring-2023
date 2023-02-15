@@ -16,6 +16,14 @@ class List:
         self.head = None
     def prepend(self, x: int):
         self.head = Elem(x, self.head)
+    def append(self, x: int):
+        if self.head is None:
+            self.head = Elem(x, None)
+        else:
+            p = self.head
+            while p.next is not None:
+                p = p.next
+            p.next = Elem(x, None)
     def print_list(self):
         p = self.head
         while p is not None:
@@ -36,7 +44,7 @@ def only_even(orig: List) -> List:
     p = orig.head
     while p is not None:
         if p.val % 2 == 0:
-            evens.prepend(p.val)
+            evens.append(p.val)
         p = p.next
     return evens
 
@@ -46,6 +54,7 @@ if __name__ == '__main__':
     head.prepend(4)
     head.prepend(6)
     head.prepend(5)
+    head.append(2)
     head.print_list()
 
     print('Length')
