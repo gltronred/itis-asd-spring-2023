@@ -32,7 +32,13 @@ class List:
 # Из списка orig скопировать чётные элементы в новый список
 # Исходный список остаётся без изменений
 def only_even(orig: List) -> List:
-    return orig
+    evens = List()
+    p = orig.head
+    while p is not None:
+        if p.val % 2 == 0:
+            evens.prepend(p.val)
+        p = p.next
+    return evens
 
 if __name__ == '__main__':
     head = List()
