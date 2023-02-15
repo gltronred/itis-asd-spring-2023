@@ -21,14 +21,33 @@ class List:
         while p is not None:
             print(p.val)
             p = p.next
-
     def length(self) -> int:
-        # Write a function to compute length of the list
-        pass
+        n = 0
+        p = self.head
+        while p is not None:
+            n = n+1
+            p = p.next
+        return n
+
+# Из списка orig скопировать чётные элементы в новый список
+# Исходный список остаётся без изменений
+def only_even(orig: List) -> List:
+    return orig
 
 if __name__ == '__main__':
     head = List()
     head.prepend(3)
     head.prepend(4)
+    head.prepend(6)
     head.prepend(5)
     head.print_list()
+
+    print('Length')
+    print(head.length())
+
+    print('Only even')
+    evens = only_even(head)
+    print('Orig')
+    head.print_list()           # 5,6,4,3
+    print('Evens')
+    evens.print_list()          # 6,4
