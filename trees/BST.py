@@ -30,7 +30,16 @@ class Tree:
                 q.right = Node(x, None, None)
     def lookup(self, x) -> bool:
         """returns, whether x is in tree"""
-        pass
+        p = self.root
+        while p is not None:
+            if p.val == x:
+                return True
+            elif x < p.val:
+                p = p.left
+            else:
+                p = p.right
+        return False
+
     def print_tree(self):
         """
         print_tree outputs a tree in the following format:
