@@ -28,6 +28,8 @@ class Tree:
                 q.left = Node(x, None, None)
             else:
                 q.right = Node(x, None, None)
+    def lookup(self, x):
+        pass
     def print_tree(self):
         """
         print_tree outputs a tree in the following format:
@@ -63,25 +65,35 @@ class Tree:
 
 if __name__ == '__main__':
     t = Tree()
-    t.insert(3)
-    t.print_tree()
-    print("--------------")
+    # t.insert(3)
+    # t.print_tree()
+    # print("--------------")
 
-    t.insert(2)
-    t.print_tree()
-    print("--------------")
+    # t.insert(2)
+    # t.print_tree()
+    # print("--------------")
 
-    t.insert(5)
-    t.print_tree()
-    print("--------------")
+    # t.insert(5)
+    # t.print_tree()
+    # print("--------------")
 
-    t.insert(1)
-    t.print_tree()
-    print("--------------")
+    # t.insert(1)
+    # t.print_tree()
+    # print("--------------")
 
-    t.insert(4)
-    t.print_tree()
-    print("--------------")
+    # t.insert(4)
+    # t.print_tree()
+    # print("--------------")
 
-    t.insert(4)
-    t.print_tree()
+    # t.insert(4)
+    # t.print_tree()
+
+    # for i in range(5):
+    #     t.insert(i)
+    # t.print_tree()
+
+    for i in [10,14,52,1,45,13,9]:
+        t.insert(i)
+    print('Is 10 in tree? ', t.lookup(10))
+    print('Is 52 in tree? ', t.lookup(52))
+    print('Is 3 in tree? ', t.lookup(3))
