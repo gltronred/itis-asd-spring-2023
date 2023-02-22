@@ -28,7 +28,8 @@ class Tree:
                 q.left = Node(x, None, None)
             else:
                 q.right = Node(x, None, None)
-    def lookup(self, x):
+    def lookup(self, x) -> bool:
+        """returns, whether x is in tree"""
         pass
     def print_tree(self):
         """
