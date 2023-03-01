@@ -53,3 +53,11 @@ for _ in range(n):
 # удаляем минимальный
 #  0  1  2  3  4  5  6   <- индексы
 # [3, 4, 3, 5, 6, 7]
+
+heap2 = []
+h.heappush(heap2, (5, 'write code'))
+h.heappush(heap2, (7, 'release product'))
+h.heappush(heap2, (1, 'write spec'))
+h.heappush(heap2, (3, 'create tests'))
+while heap2 != []:
+    print(h.heappop(heap2))
