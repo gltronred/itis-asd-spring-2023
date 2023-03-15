@@ -20,6 +20,11 @@ def adj_matrix_to_adj_lists(a: list[list[bool]]) -> list[list[int]]:
         r.append(ri)
     return r
 
+
+def adj_lists_to_edge_list(a: list[list[int]]) -> list[(int,int)]:
+    """Convert adjacency list to edge list."""
+    pass
+
 if __name__ == '__main__':
     a = edge_list_to_adj_matrix(3, [(0,1), (1,2)])
     print(a)
