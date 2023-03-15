@@ -8,5 +8,12 @@ def edge_list_to_adj_matrix(v: int, edges: list[(int, int)]) -> list[list[bool]]
     return mas
 
 
+def adj_matrix_to_adj_lists(a: list[list[bool]]) -> list[list[int]]:
+    """Convert adjacency matrix to adjacency lists."""
+    pass
+
+
 if __name__ == '__main__':
-    print(edge_list_to_adj_matrix(3, [(0,1), (1,2)]))
+    a = edge_list_to_adj_matrix(3, [(0,1), (1,2)])
+    print(a)
+    print(adj_matrix_to_adj_lists(a))
