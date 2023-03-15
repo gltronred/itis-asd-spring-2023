@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-import array
-
 def edge_list_to_adj_matrix(v: int, edges: list[(int, int)]) -> list[list[bool]]:
     """Convert list of edges to adjacency matrix."""
     mas = [[False for _ in range(v)] for _ in range(v)]
