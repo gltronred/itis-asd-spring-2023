@@ -62,30 +62,41 @@ def powerset(set):
 #       i
 # 1,3,5,2,4
 
+# 1,3,5,4,2
+# 1,4,2,3,5
+#
+# a_1 ... a_{i-2} a_{i-1} < a_i > a_{i+1} >... a_{m-1} >   a_m   > a_{m+1} ...> a_n
+# a_1 ... a_{i-2}   a_m     a_n < a_{n-1} <... a_{m+1} < a_{i-1} < a_{m-1} ...< a_i
+
 def permutations(n):
     """Return permutations of [1,2,...,n]."""
+    # First permutation
     p = [i+1 for i in range(n)]
 
     flag = True
     while flag:
         yield p
 
+        # What part of permutation should we change?
         i = len(p) - 1
         while i > 0 and p[i-1] > p[i]:
             i -= 1
+
+        # If all permutation is in reverse order, then we finish
         flag = i > 0
+        # Otherwise, we change a part:
         if flag:
             # p[i-1] < p[i]
-            # find m: p[m] - minimal element greater than p[i-1]
+            # Find m: p[m] - minimal element greater than p[i-1]
             m = i
             for j in range(i+1, n):
                 if p[j] < p[m] and p[j] > p[i-1]:
                     m = j
-            # swap p[m] and p[i-1]
+            # Swap p[m] and p[i-1]
             t = p[m]
             p[m] = p[i-1]
             p[i-1] = t
-            # sort p[i:] - same as reverse p[i:] here
+            # Sort p[i:] - same as reverse p[i:] here
             p[i:] = reversed(p[i:])
 
 
