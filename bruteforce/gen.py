@@ -16,14 +16,16 @@ def gen(n):
 #     print(x)
 
 
-def gen2(n):
-    i = n
-    while i > 0:
-        yield i
-        i = i + 1
+def powerset(set):
+    """Return all subsets of set."""
+    if len(set) == 0:
+        yield []
+    else:
+        r = set[0]
+        for j in powerset(set[1:]):
+            yield j
+            yield [r] + j
 
 
-for x in gen2(1):
-    print(x)
-    if x > 5:
-        break
+for i in powerset([1, 2, 3]):
+    print(i)
