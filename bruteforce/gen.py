@@ -26,6 +26,15 @@ def powerset(set):
             yield j
             yield [r] + j
 
+# [1,2,...,9]
+#   [2,...,9]
+#
+# S is subset [2,...,9] =>        S  is subset [1,2,...,9]
+#                       => ([1] + S) is subset [1,2,...,9]
+#
+# S is subset [1,2,...,9] => either S is subset [2,...,9]
+#                            or S \ [1] is subset [2,...,9]
+
 
 for i in powerset([1, 2, 3]):
     print(i)
