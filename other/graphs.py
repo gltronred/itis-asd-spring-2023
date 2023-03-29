@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 def edge_list_to_adj_matrix(v: int, edges: list[(int, int)]) -> list[list[bool]]:
     """Convert list of edges to adjacency matrix."""
     mas = [[False for _ in range(v)] for _ in range(v)]
@@ -28,6 +29,7 @@ def adj_lists_to_edge_list(a: list[list[int]]) -> list[(int,int)]:
         for j in a[i]:
             m.append((i,j))
     return m
+
 
 if __name__ == '__main__':
     a = edge_list_to_adj_matrix(3, [(0,1), (1,2)])
