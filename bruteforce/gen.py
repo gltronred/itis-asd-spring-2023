@@ -65,8 +65,8 @@ def powerset(set):
 # 1,3,5,4,2
 # 1,4,2,3,5
 #
-# a_1 ... a_{i-2} a_{i-1} < a_i > a_{i+1} >... a_{m-1} >   a_m   > a_{m+1} ...> a_n
-# a_1 ... a_{i-2}   a_m     a_n < a_{n-1} <... a_{m+1} < a_{i-1} < a_{m-1} ...< a_i
+# a_1...a_{i-2} a_{i-1} < a_i > a_{i+1} >...a_{m-1} >   a_m   > a_{m+1}...> a_n
+# a_1...a_{i-2}   a_m     a_n < a_{n-1} <...a_{m+1} < a_{i-1} < a_{m-1}...< a_i
 
 def permutations(n):
     """Return permutations of [1,2,...,n]."""
